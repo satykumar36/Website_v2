@@ -1,0 +1,1737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CherriCode — Shopify Development Agency</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img src="data:image/png;base64,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" alt="CherriCode logo">
+      <span class="logo-wordmark">Cherri<span>Code</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html"  id="nav-home" class="active">Home</a></li>
+      <li><a href="service.html"  id="nav-services">Services</a></li>
+      <li><a href="about.html"  id="nav-about">About</a></li>
+      <li><a href="contact.html"  id="nav-contact">Contact</a></li>
+      <li><a href="contact.html"  class="nav-cta">Book a Call &rarr;</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══ HOME PAGE ═══ -->
+<div class="page active" id="page-home">
+  <section class="hero">
+    <div class="hero-bg-dots"></div>
+    <div class="hero-bg-glow"></div>
+    <div class="hero-bg-glow2"></div>
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-eyebrow"><span class="eyebrow-dot"></span>Shopify Development Agency</div>
+        <h1 class="hero-headline">Your store should be <em>making</em> you <span class="u-word">money.</span></h1>
+        <p class="hero-sub">We build, fix, and grow Shopify stores for startups and small businesses that are serious about selling online. No templates. No guesswork.</p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn-primary">Book a Free Strategy Call <span class="arr">&rarr;</span></a>
+          <a href="service.html" class="btn-secondary">View Services &nearr;</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item"><div class="stat-num">50<span>+</span></div><div class="stat-label">Stores Built</div></div>
+          <div class="stat-item"><div class="stat-num">3<span>&times;</span></div><div class="stat-label">Avg. Conv. Lift</div></div>
+          <div class="stat-item"><div class="stat-num">48<span>h</span></div><div class="stat-label">Response Time</div></div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-card">
+          <div class="badge-live">Live Store</div>
+          <div class="card-header">
+            <div class="card-dots"><div class="card-dot"></div><div class="card-dot"></div><div class="card-dot"></div></div>
+            <div class="card-title">store-analytics.shopify.com</div>
+          </div>
+          <div class="card-metric-row">
+            <div class="card-metric"><div class="card-metric-val pos">3.2%</div><div class="card-metric-label">Conv. Rate</div></div>
+            <div class="card-metric"><div class="card-metric-val">$58.4k</div><div class="card-metric-label">This Month</div></div>
+          </div>
+          <div class="card-chart">
+            <div class="bar" style="height:30%"></div><div class="bar" style="height:48%"></div>
+            <div class="bar" style="height:38%"></div><div class="bar" style="height:62%"></div>
+            <div class="bar" style="height:52%"></div><div class="bar active" style="height:80%"></div>
+            <div class="bar active" style="height:92%"></div>
+          </div>
+          <div class="card-row"><span class="card-row-label">Page Speed</span><span class="card-row-val up">1.8s &uarr;</span></div>
+          <div class="card-row"><span class="card-row-label">Cart Abandonment</span><span class="card-row-val up">48% &darr;</span></div>
+          <div class="card-row"><span class="card-row-label">Revenue / Visitor</span><span class="card-row-val cherry">$4.20</span></div>
+        </div>
+        <img src="assets/shopify.png" class="shopify_hero">
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <div class="marquee-item">Shopify Development <span class="marquee-sep">&middot;</span></div>
+      <div class="marquee-item">Store Redesign <span class="marquee-sep">&middot;</span></div>
+      <div class="marquee-item">Platform Migration <span class="marquee-sep">&middot;</span></div>
+      <div class="marquee-item">Conversion Optimization <span class="marquee-sep">&middot;</span></div>
+      <div class="marquee-item">Speed Optimization <span class="marquee-sep">&middot;</span></div>
+      <div class="marquee-item">App Integration <span class="marquee-sep">&middot;</span></div>
+      <div class="marquee-item">Custom Liquid Dev <span class="marquee-sep">&middot;</span></div>
+      <div class="marquee-item">Shopify Partner <span class="marquee-sep">&middot;</span></div>
+      <div class="marquee-item">Shopify Development <span class="marquee-sep">&middot;</span></div>
+      <div class="marquee-item">Store Redesign <span class="marquee-sep">&middot;</span></div>
+      <div class="marquee-item">Platform Migration <span class="marquee-sep">&middot;</span></div>
+      <div class="marquee-item">Conversion Optimization <span class="marquee-sep">&middot;</span></div>
+      <div class="marquee-item">Speed Optimization <span class="marquee-sep">&middot;</span></div>
+      <div class="marquee-item">App Integration <span class="marquee-sep">&middot;</span></div>
+      <div class="marquee-item">Custom Liquid Dev <span class="marquee-sep">&middot;</span></div>
+      <div class="marquee-item">Shopify Partner <span class="marquee-sep">&middot;</span></div>
+    </div>
+  </div>
+
+<!--Shopify video-->
+<section class="shopify_video">
+  <div class="shopify_video_container container">
+    <div class="badge">
+      <div class="badge-dot">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      </div>
+      <span>Watch us build</span>
+    </div>
+    <h2 class="section-title fade-up">We craft dynamic <em>Shopify ecommerce experiences</em> using the latest technologies</h2>
+    <div class="pills">
+      <div class="pill"><span class="pill-dot"></span>Shopify 2.0</div>
+      <div class="pill"><span class="pill-dot"></span>Custom Liquid</div>
+      <div class="pill"><span class="pill-dot"></span>AI Integration</div>
+      <div class="pill"><span class="pill-dot"></span>Motion Design</div>
+      <div class="pill"><span class="pill-dot"></span>Headless Commerce</div>
+    </div>
+
+  <div class="frame-wrap">
+    <div class="float-badge fb1">Shopify 2.0 Sections</div>
+    <div class="float-badge fb2">Sub-1s Load Time</div>
+    <div class="float-badge fb3">Mobile-First Build</div>
+    <div class="float-badge fb4">AI Personalization</div>
+
+    <div class="browser">
+      <div class="browser-bar">
+        <div class="dots">
+          <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+        </div>
+        <div class="url-bar">
+          <svg class="url-lock" viewBox="0 0 24 24"><path d="M18 10h-1V7A5 5 0 007 7v3H6a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2v-8a2 2 0 00-2-2zm-6 7a1 1 0 110-2 1 1 0 010 2zm3-7H9V7a3 3 0 016 0v3z"/></svg>
+          <span class="url-text">yourdreamstore.myshopify.com</span>
+          <span class="url-badge">LIVE</span>
+        </div>
+      </div>
+      <div class="video-container" id="vid">
+        <div class="scan-line"></div>
+        <!-- Simulated looping pages — replace with your <video> tag -->
+        <video class="" autoplay muted loop>
+          <source src="assets/video-template.mp4" type="video/mp4">
+        </video>
+        </div>
+        <div class="vid-overlay">
+          <div class="vid-loop-badge"><div class="loop-dot"></div>Playing on loop</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+</section>
+
+
+
+
+  <!-- <section style="background:white;padding:96px 0;">
+    <div class="container">
+      <div class="section-eyebrow fade-up">What We Do</div>
+      <h2 class="section-title fade-up">Everything your Shopify <em>store needs</em> to sell</h2>
+      <p class="section-sub fade-up">We handle the technical side so you can focus on your products, your brand, and your customers.</p>
+      <div class="services-grid fade-up">
+        <div class="service-card">
+          <div class="service-num">01</div>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+          <div class="service-name">New Store Build</div>
+          <p class="service-desc">Start with a store built to sell &mdash; designed around your customer journey, not just what looks good in a demo.</p>
+          <a href="service.html" class="service-link">Learn more &rarr;</a>
+        </div>
+        <div class="service-card">
+          <div class="service-num">02</div>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+          <div class="service-name">Redesign &amp; CRO</div>
+          <p class="service-desc">If your store isn&rsquo;t converting, something is wrong. We find it, diagnose it, and fix it &mdash; with data, not guesses.</p>
+          <a href="service.html" class="service-link">Learn more &rarr;</a>
+        </div>
+        <div class="service-card">
+          <div class="service-num">03</div>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg></div>
+          <div class="service-name">Platform Migration</div>
+          <p class="service-desc">Move from WooCommerce, Wix, or a custom build to Shopify &mdash; cleanly, without losing data or SEO rankings.</p>
+          <a href="service.html" class="service-link">Learn more &rarr;</a>
+        </div>
+        <div class="service-card">
+          <div class="service-num">04</div>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="service-name">Ongoing Maintenance</div>
+          <p class="service-desc">Monthly retainers for businesses who want a technical partner &mdash; not someone they brief from scratch every time.</p>
+          <a href="service.html" class="service-link">Learn more &rarr;</a>
+        </div>
+        <div class="service-card">
+          <div class="service-num">05</div>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+          <div class="service-name">Speed &amp; Performance</div>
+          <p class="service-desc">Every second of load time costs you sales. We fix Core Web Vitals, optimize images, and cut dead app weight.</p>
+          <a href="service.html" class="service-link">Learn more &rarr;</a>
+        </div>
+        <div class="service-card">
+          <div class="service-num">06</div>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+          <div class="service-name">Custom Development</div>
+          <p class="service-desc">Custom Liquid sections, app integrations, and features that Shopify doesn&rsquo;t do out of the box &mdash; built properly.</p>
+          <a href="service.html" class="service-link">Learn more &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <section style="background:var(--white);padding:96px 0;">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-left fade-up">
+          <div class="section-eyebrow">Why CherriCode</div>
+          <h2 class="section-title">Not a freelancer. Not a bloated agency.<br><em>Something better.</em></h2>
+          <p class="section-sub">A focused Shopify shop that gives you the accountability of one person and the capability of a full team.</p>
+          <br><br>
+          <a href="about.html" class="btn-primary">Meet the Team <span class="arr">&rarr;</span></a>
+        </div>
+        <div class="why-right fade-up">
+          <div class="why-item"><div class="why-item-header"><div class="why-icon">&#9889;</div><div class="why-title">Outcome-focused, not hour-focused</div></div><p class="why-desc">We bill by project, not the hour. We&rsquo;re motivated to work efficiently, not drag things out.</p></div>
+          <div class="why-item"><div class="why-item-header"><div class="why-icon">&#127919;</div><div class="why-title">Shopify is all we do right now</div></div><p class="why-desc">We don&rsquo;t try to do everything. Shopify is our focus &mdash; which means we&rsquo;re actually good at it.</p></div>
+          <div class="why-item"><div class="why-item-header"><div class="why-icon">&#129309;</div><div class="why-title">Long-term partner, not a vendor</div></div><p class="why-desc">Our best clients aren&rsquo;t one-project clients. We build relationships and grow with the businesses we work with.</p></div>
+          <div class="why-item"><div class="why-item-header"><div class="why-icon">&#128202;</div><div class="why-title">We think in revenue, not design</div></div><p class="why-desc">Every decision &mdash; layout, speed, checkout flow &mdash; is made with your conversion rate in mind.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ---------Clients Website-------- -->
+<section class="dvl-portfolio">
+
+  <!-- HEADER -->
+  <div class="dvl-portfolio__head container">
+    <div class="dvl-portfolio__badge">
+      <div class="dvl-portfolio__badge-dot">&#9654;</div>
+      <span class="dvl-portfolio__badge-text">Featured Projects</span>
+    </div>
+    <h2 class="section-title fade-up">A showcase of <em>Shopify stores</em> designed and built for performance.</h2>
+  </div>
+
+  <!-- SCROLLING ROWS -->
+  <div class="dvl-portfolio__rows">
+
+    <!-- ROW 1 — scrolls LEFT -->
+    <div class="dvl-portfolio__track dvl-portfolio__track--left">
+
+      <!-- Card 1 -->
+      <div class="dvl-portfolio__card wide">
+        <div class="dvl-portfolio__bar">
+          <div class="dvl-portfolio__dots">
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--r"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--y"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--g"></div>
+          </div>
+          <div class="dvl-portfolio__url">
+            <div class="dvl-portfolio__url-icon"></div>
+            <span class="dvl-portfolio__url-text">furni.myshopify.com</span>
+            <div class="dvl-portfolio__live"></div>
+          </div>
+        </div>
+        <div class="dvl-portfolio__screen">
+          <img src="assets/client1.png" alt="Fashion store">
+          <div class="dvl-portfolio__screen-overlay">
+            <span class="dvl-portfolio__screen-tag">Custom Theme</span>
+          </div>
+        </div>
+        <div class="dvl-portfolio__caption">
+          <div class="dvl-portfolio__caption-left">
+            <span class="dvl-portfolio__caption-name">Modern Furniture Brand</span>
+            <span class="dvl-portfolio__caption-niche">Furniture &middot; Home Decor</span>
+          </div>
+          <span class="dvl-portfolio__caption-pill">Theme Design</span>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="dvl-portfolio__card">
+        <div class="dvl-portfolio__bar">
+          <div class="dvl-portfolio__dots">
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--r"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--y"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--g"></div>
+          </div>
+          <div class="dvl-portfolio__url">
+            <div class="dvl-portfolio__url-icon"></div>
+            <span class="dvl-portfolio__url-text">waggy.myshopify.com</span>
+            <div class="dvl-portfolio__live"></div>
+          </div>
+        </div>
+        <div class="dvl-portfolio__screen">
+          <img src="assets/client2.png" alt="Beauty store">
+          <div class="dvl-portfolio__screen-overlay">
+            <span class="dvl-portfolio__screen-tag">Full Build</span>
+          </div>
+        </div>
+        <div class="dvl-portfolio__caption">
+          <div class="dvl-portfolio__caption-left">
+            <span class="dvl-portfolio__caption-name">Premium Dog Food Brand</span>
+            <span class="dvl-portfolio__caption-niche">Pet Food &middot; Subscription</span>
+          </div>
+          <span class="dvl-portfolio__caption-pill">Full Build</span>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="dvl-portfolio__card wide">
+        <div class="dvl-portfolio__bar">
+          <div class="dvl-portfolio__dots">
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--r"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--y"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--g"></div>
+          </div>
+          <div class="dvl-portfolio__url">
+            <div class="dvl-portfolio__url-icon"></div>
+            <span class="dvl-portfolio__url-text">kaira.myshopify.com</span>
+            <div class="dvl-portfolio__live"></div>
+          </div>
+        </div>
+        <div class="dvl-portfolio__screen">
+          <img src="assets/client3.png" alt="Coffee store">
+          <div class="dvl-portfolio__screen-overlay">
+            <span class="dvl-portfolio__screen-tag">Shopify Plus</span>
+          </div>
+        </div>
+        <div class="dvl-portfolio__caption">
+          <div class="dvl-portfolio__caption-left">
+            <span class="dvl-portfolio__caption-name">Modern Clothing Brand</span>
+            <span class="dvl-portfolio__caption-niche">Apparel &middot; D2C</span>
+          </div>
+          <span class="dvl-portfolio__caption-pill">Shopify Plus</span>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="dvl-portfolio__card">
+        <div class="dvl-portfolio__bar">
+          <div class="dvl-portfolio__dots">
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--r"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--y"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--g"></div>
+          </div>
+          <div class="dvl-portfolio__url">
+            <div class="dvl-portfolio__url-icon"></div>
+            <span class="dvl-portfolio__url-text">hexashop.myshopify.com</span>
+            <div class="dvl-portfolio__live"></div>
+          </div>
+        </div>
+        <div class="dvl-portfolio__screen">
+          <img src="assets/client4.png" alt="Apparel store">
+          <div class="dvl-portfolio__screen-overlay">
+            <span class="dvl-portfolio__screen-tag">Migration</span>
+          </div>
+        </div>
+        <div class="dvl-portfolio__caption">
+          <div class="dvl-portfolio__caption-left">
+            <span class="dvl-portfolio__caption-name">Streetwear Clothing Brand</span>
+            <span class="dvl-portfolio__caption-niche">Apparel &middot; Fashion</span>
+          </div>
+          <span class="dvl-portfolio__caption-pill">Migration</span>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="dvl-portfolio__card wide">
+        <div class="dvl-portfolio__bar">
+          <div class="dvl-portfolio__dots">
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--r"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--y"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--g"></div>
+          </div>
+          <div class="dvl-portfolio__url">
+            <div class="dvl-portfolio__url-icon"></div>
+            <span class="dvl-portfolio__url-text">bookly.myshopify.com</span>
+            <div class="dvl-portfolio__live"></div>
+          </div>
+        </div>
+        <div class="dvl-portfolio__screen">
+          <img src="assets/client5.png" alt="Wellness store">
+          <div class="dvl-portfolio__screen-overlay">
+            <span class="dvl-portfolio__screen-tag">Speed & CRO</span>
+          </div>
+        </div>
+        <div class="dvl-portfolio__caption">
+          <div class="dvl-portfolio__caption-left">
+            <span class="dvl-portfolio__caption-name">Digital Book Brand</span>
+            <span class="dvl-portfolio__caption-niche">Books &middot; Publishing</span>
+          </div>
+          <span class="dvl-portfolio__caption-pill">CRO</span>
+        </div>
+      </div>
+
+      <!-- DUPLICATES for seamless loop -->
+      <div class="dvl-portfolio__card">
+        <div class="dvl-portfolio__bar">
+          <div class="dvl-portfolio__dots">
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--r"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--y"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--g"></div>
+          </div>
+          <div class="dvl-portfolio__url">
+            <div class="dvl-portfolio__url-icon"></div>
+            <span class="dvl-portfolio__url-text">furni.myshopify.com</span>
+            <div class="dvl-portfolio__live"></div>
+          </div>
+        </div>
+        <div class="dvl-portfolio__screen">
+          <img src="assets/client1.png" alt="Fashion store">
+          <div class="dvl-portfolio__screen-overlay">
+            <span class="dvl-portfolio__screen-tag">Custom Theme</span>
+          </div>
+        </div>
+        <div class="dvl-portfolio__caption">
+          <div class="dvl-portfolio__caption-left">
+            <span class="dvl-portfolio__caption-name">Modern Furniture Brand</span>
+            <span class="dvl-portfolio__caption-niche">Furniture &middot; Home Decor</span>
+          </div>
+          <span class="dvl-portfolio__caption-pill">Theme Design</span>
+        </div>
+      </div>
+
+      <div class="dvl-portfolio__card wide">
+        <div class="dvl-portfolio__bar">
+          <div class="dvl-portfolio__dots">
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--r"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--y"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--g"></div>
+          </div>
+          <div class="dvl-portfolio__url">
+            <div class="dvl-portfolio__url-icon"></div>
+            <span class="dvl-portfolio__url-text">waggy.myshopify.com</span>
+            <div class="dvl-portfolio__live"></div>
+          </div>
+        </div>
+        <div class="dvl-portfolio__screen">
+          <img src="assets/client2.png" alt="Beauty store">
+          <div class="dvl-portfolio__screen-overlay">
+            <span class="dvl-portfolio__screen-tag">Full Build</span>
+          </div>
+        </div>
+        <div class="dvl-portfolio__caption">
+          <div class="dvl-portfolio__caption-left">
+            <span class="dvl-portfolio__caption-name">Premium Dog Food Brand</span>
+            <span class="dvl-portfolio__caption-niche">Pet Food &middot; Subscription</span>
+          </div>
+          <span class="dvl-portfolio__caption-pill">Full Build</span>
+        </div>
+      </div>
+
+      <div class="dvl-portfolio__card">
+        <div class="dvl-portfolio__bar">
+          <div class="dvl-portfolio__dots">
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--r"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--y"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--g"></div>
+          </div>
+          <div class="dvl-portfolio__url">
+            <div class="dvl-portfolio__url-icon"></div>
+            <span class="dvl-portfolio__url-text">kaira.myshopify.com</span>
+            <div class="dvl-portfolio__live"></div>
+          </div>
+        </div>
+        <div class="dvl-portfolio__screen">
+          <img src="assets/client3.png" alt="Coffee store">
+          <div class="dvl-portfolio__screen-overlay">
+            <span class="dvl-portfolio__screen-tag">Shopify Plus</span>
+          </div>
+        </div>
+        <div class="dvl-portfolio__caption">
+          <div class="dvl-portfolio__caption-left">
+            <span class="dvl-portfolio__caption-name">Modern Clothing Brand</span>
+            <span class="dvl-portfolio__caption-niche">Apparel &middot; D2C</span>
+          </div>
+          <span class="dvl-portfolio__caption-pill">Shopify Plus</span>
+        </div>
+      </div>
+
+      <div class="dvl-portfolio__card wide">
+        <div class="dvl-portfolio__bar">
+          <div class="dvl-portfolio__dots">
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--r"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--y"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--g"></div>
+          </div>
+          <div class="dvl-portfolio__url">
+            <div class="dvl-portfolio__url-icon"></div>
+            <span class="dvl-portfolio__url-text">hexashop.myshopify.com</span>
+            <div class="dvl-portfolio__live"></div>
+          </div>
+        </div>
+        <div class="dvl-portfolio__screen">
+          <img src="assets/client4.png" alt="Apparel store">
+          <div class="dvl-portfolio__screen-overlay">
+            <span class="dvl-portfolio__screen-tag">Migration</span>
+          </div>
+        </div>
+        <div class="dvl-portfolio__caption">
+          <div class="dvl-portfolio__caption-left">
+            <span class="dvl-portfolio__caption-name">Streetwear Clothing Brand</span>
+            <span class="dvl-portfolio__caption-niche">Apparel &middot; Fashion</span>
+          </div>
+          <span class="dvl-portfolio__caption-pill">Migration</span>
+        </div>
+      </div>
+
+      <div class="dvl-portfolio__card">
+        <div class="dvl-portfolio__bar">
+          <div class="dvl-portfolio__dots">
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--r"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--y"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--g"></div>
+          </div>
+          <div class="dvl-portfolio__url">
+            <div class="dvl-portfolio__url-icon"></div>
+            <span class="dvl-portfolio__url-text">bookly.myshopify.com</span>
+            <div class="dvl-portfolio__live"></div>
+          </div>
+        </div>
+        <div class="dvl-portfolio__screen">
+          <img src="assets/client5.png" alt="Wellness store">
+          <div class="dvl-portfolio__screen-overlay">
+            <span class="dvl-portfolio__screen-tag">Speed & CRO</span>
+          </div>
+        </div>
+        <div class="dvl-portfolio__caption">
+          <div class="dvl-portfolio__caption-left">
+            <span class="dvl-portfolio__caption-name">Digital Book Brand</span>
+            <span class="dvl-portfolio__caption-niche">Books &middot; Publishing</span>
+          </div>
+          <span class="dvl-portfolio__caption-pill">CRO</span>
+        </div>
+      </div>
+
+    </div><!-- end track left -->
+
+    <!-- ROW 2 — scrolls RIGHT -->
+    <div class="dvl-portfolio__track dvl-portfolio__track--right">
+
+      <div class="dvl-portfolio__card wide">
+        <div class="dvl-portfolio__bar">
+          <div class="dvl-portfolio__dots">
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--r"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--y"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--g"></div>
+          </div>
+          <div class="dvl-portfolio__url">
+            <div class="dvl-portfolio__url-icon"></div>
+            <span class="dvl-portfolio__url-text">cozastore.myshopify.com</span>
+            <div class="dvl-portfolio__live"></div>
+          </div>
+        </div>
+        <div class="dvl-portfolio__screen">
+          <img src="assets/client6.png" alt="Sport store">
+          <div class="dvl-portfolio__screen-overlay">
+            <span class="dvl-portfolio__screen-tag">Shopify 2.0</span>
+          </div>
+        </div>
+        <div class="dvl-portfolio__caption">
+          <div class="dvl-portfolio__caption-left">
+            <span class="dvl-portfolio__caption-name">Luxury Apparel Brand</span>
+            <span class="dvl-portfolio__caption-niche">Apparel &middot; Premium</span>
+          </div>
+          <span class="dvl-portfolio__caption-pill">Shopify 2.0</span>
+        </div>
+      </div>
+
+      <div class="dvl-portfolio__card">
+        <div class="dvl-portfolio__bar">
+          <div class="dvl-portfolio__dots">
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--r"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--y"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--g"></div>
+          </div>
+          <div class="dvl-portfolio__url">
+            <div class="dvl-portfolio__url-icon"></div>
+            <span class="dvl-portfolio__url-text">pillow-mart.myshopify.com</span>
+            <div class="dvl-portfolio__live"></div>
+          </div>
+        </div>
+        <div class="dvl-portfolio__screen">
+          <img src="assets/client7.png" alt="Jewelry store">
+          <div class="dvl-portfolio__screen-overlay">
+            <span class="dvl-portfolio__screen-tag">Custom UI/UX</span>
+          </div>
+        </div>
+        <div class="dvl-portfolio__caption">
+          <div class="dvl-portfolio__caption-left">
+            <span class="dvl-portfolio__caption-name">Comfort Pillow Brand</span>
+            <span class="dvl-portfolio__caption-niche">Home &middot; Bedding</span>
+          </div>
+          <span class="dvl-portfolio__caption-pill">UI/UX Design</span>
+        </div>
+      </div>
+
+      <div class="dvl-portfolio__card wide">
+        <div class="dvl-portfolio__bar">
+          <div class="dvl-portfolio__dots">
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--r"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--y"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--g"></div>
+          </div>
+          <div class="dvl-portfolio__url">
+            <div class="dvl-portfolio__url-icon"></div>
+            <span class="dvl-portfolio__url-text">cycle.myshopify.com</span>
+            <div class="dvl-portfolio__live"></div>
+          </div>
+        </div>
+        <div class="dvl-portfolio__screen">
+          <img src="assets/client8.png" alt="Home decor store">
+          <div class="dvl-portfolio__screen-overlay">
+            <span class="dvl-portfolio__screen-tag">App Integration</span>
+          </div>
+        </div>
+        <div class="dvl-portfolio__caption">
+          <div class="dvl-portfolio__caption-left">
+            <span class="dvl-portfolio__caption-name">Performance Bicycle Brand</span>
+            <span class="dvl-portfolio__caption-niche">Cycling &middot; Sports</span>
+          </div>
+          <span class="dvl-portfolio__caption-pill">Integration</span>
+        </div>
+      </div>
+
+      <div class="dvl-portfolio__card">
+        <div class="dvl-portfolio__bar">
+          <div class="dvl-portfolio__dots">
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--r"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--y"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--g"></div>
+          </div>
+          <div class="dvl-portfolio__url">
+            <div class="dvl-portfolio__url-icon"></div>
+            <span class="dvl-portfolio__url-text">ministore.myshopify.com</span>
+            <div class="dvl-portfolio__live"></div>
+          </div>
+        </div>
+        <div class="dvl-portfolio__screen">
+          <img src="assets/client9.png" alt="Tech store">
+          <div class="dvl-portfolio__screen-overlay">
+            <span class="dvl-portfolio__screen-tag">Redesign</span>
+          </div>
+        </div>
+        <div class="dvl-portfolio__caption">
+          <div class="dvl-portfolio__caption-left">
+            <span class="dvl-portfolio__caption-name">Luxury Watch Brand</span>
+            <span class="dvl-portfolio__caption-niche">Accessories &middot; Premium</span>
+          </div>
+          <span class="dvl-portfolio__caption-pill">Redesign</span>
+        </div>
+      </div>
+
+      <div class="dvl-portfolio__card wide">
+        <div class="dvl-portfolio__bar">
+          <div class="dvl-portfolio__dots">
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--r"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--y"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--g"></div>
+          </div>
+          <div class="dvl-portfolio__url">
+            <div class="dvl-portfolio__url-icon"></div>
+            <span class="dvl-portfolio__url-text">stylish.myshopify.com</span>
+            <div class="dvl-portfolio__live"></div>
+          </div>
+        </div>
+        <div class="dvl-portfolio__screen">
+          <img src="assets/client10.png" alt="Organic store">
+          <div class="dvl-portfolio__screen-overlay">
+            <span class="dvl-portfolio__screen-tag">Full Build</span>
+          </div>
+        </div>
+        <div class="dvl-portfolio__caption">
+          <div class="dvl-portfolio__caption-left">
+            <span class="dvl-portfolio__caption-name">Modern Footwear Brand</span>
+            <span class="dvl-portfolio__caption-niche">Footwear &middot; D2C</span>
+          </div>
+          <span class="dvl-portfolio__caption-pill">Full Build</span>
+        </div>
+      </div>
+
+      <!-- DUPLICATES row 2 -->
+      <div class="dvl-portfolio__card">
+        <div class="dvl-portfolio__bar">
+          <div class="dvl-portfolio__dots">
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--r"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--y"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--g"></div>
+          </div>
+          <div class="dvl-portfolio__url">
+            <div class="dvl-portfolio__url-icon"></div>
+            <span class="dvl-portfolio__url-text">cozastore.myshopify.com</span>
+            <div class="dvl-portfolio__live"></div>
+          </div>
+        </div>
+        <div class="dvl-portfolio__screen">
+          <img src="assets/client6.png" alt="Sport store">
+          <div class="dvl-portfolio__screen-overlay">
+            <span class="dvl-portfolio__screen-tag">Shopify 2.0</span>
+          </div>
+        </div>
+        <div class="dvl-portfolio__caption">
+          <div class="dvl-portfolio__caption-left">
+            <span class="dvl-portfolio__caption-name">Luxury Apparel Brand</span>
+            <span class="dvl-portfolio__caption-niche">Apparel &middot; Premium</span>
+          </div>
+          <span class="dvl-portfolio__caption-pill">Shopify 2.0</span>
+        </div>
+      </div>
+
+      <div class="dvl-portfolio__card wide">
+        <div class="dvl-portfolio__bar">
+          <div class="dvl-portfolio__dots">
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--r"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--y"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--g"></div>
+          </div>
+          <div class="dvl-portfolio__url">
+            <div class="dvl-portfolio__url-icon"></div>
+            <span class="dvl-portfolio__url-text">pillow-mart.myshopify.com</span>
+            <div class="dvl-portfolio__live"></div>
+          </div>
+        </div>
+        <div class="dvl-portfolio__screen">
+          <img src="assets/client7.png" alt="Jewelry store">
+          <div class="dvl-portfolio__screen-overlay">
+            <span class="dvl-portfolio__screen-tag">Custom UI/UX</span>
+          </div>
+        </div>
+        <div class="dvl-portfolio__caption">
+          <div class="dvl-portfolio__caption-left">
+            <span class="dvl-portfolio__caption-name">Comfort Pillow Brand</span>
+            <span class="dvl-portfolio__caption-niche">Home &middot; Bedding</span>
+          </div>
+          <span class="dvl-portfolio__caption-pill">UI/UX Design</span>
+        </div>
+      </div>
+
+      <div class="dvl-portfolio__card">
+        <div class="dvl-portfolio__bar">
+          <div class="dvl-portfolio__dots">
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--r"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--y"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--g"></div>
+          </div>
+          <div class="dvl-portfolio__url">
+            <div class="dvl-portfolio__url-icon"></div>
+            <span class="dvl-portfolio__url-text">cycle.myshopify.com</span>
+            <div class="dvl-portfolio__live"></div>
+          </div>
+        </div>
+        <div class="dvl-portfolio__screen">
+          <img src="assets/client8.png" alt="Home decor store">
+          <div class="dvl-portfolio__screen-overlay">
+            <span class="dvl-portfolio__screen-tag">App Integration</span>
+          </div>
+        </div>
+        <div class="dvl-portfolio__caption">
+          <div class="dvl-portfolio__caption-left">
+            <span class="dvl-portfolio__caption-name">Performance Bicycle Brand</span>
+            <span class="dvl-portfolio__caption-niche">Cycling &middot; Sports</span>
+          </div>
+          <span class="dvl-portfolio__caption-pill">Integration</span>
+        </div>
+      </div>
+
+      <div class="dvl-portfolio__card wide">
+        <div class="dvl-portfolio__bar">
+          <div class="dvl-portfolio__dots">
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--r"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--y"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--g"></div>
+          </div>
+          <div class="dvl-portfolio__url">
+            <div class="dvl-portfolio__url-icon"></div>
+            <span class="dvl-portfolio__url-text">ministore.myshopify.com</span>
+            <div class="dvl-portfolio__live"></div>
+          </div>
+        </div>
+        <div class="dvl-portfolio__screen">
+          <img src="assets/client9.png" alt="Tech store">
+          <div class="dvl-portfolio__screen-overlay">
+            <span class="dvl-portfolio__screen-tag">Redesign</span>
+          </div>
+        </div>
+        <div class="dvl-portfolio__caption">
+          <div class="dvl-portfolio__caption-left">
+            <span class="dvl-portfolio__caption-name">Luxury Watch Brand</span>
+            <span class="dvl-portfolio__caption-niche">Accessories &middot; Premium</span>
+          </div>
+          <span class="dvl-portfolio__caption-pill">Redesign</span>
+        </div>
+      </div>
+
+      <div class="dvl-portfolio__card">
+        <div class="dvl-portfolio__bar">
+          <div class="dvl-portfolio__dots">
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--r"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--y"></div>
+            <div class="dvl-portfolio__dot dvl-portfolio__dot--g"></div>
+          </div>
+          <div class="dvl-portfolio__url">
+            <div class="dvl-portfolio__url-icon"></div>
+            <span class="dvl-portfolio__url-text">stylish.myshopify.com</span>
+            <div class="dvl-portfolio__live"></div>
+          </div>
+        </div>
+        <div class="dvl-portfolio__screen">
+          <img src="assets/client10.png" alt="Organic store">
+          <div class="dvl-portfolio__screen-overlay">
+            <span class="dvl-portfolio__screen-tag">Full Build</span>
+          </div>
+        </div>
+        <div class="dvl-portfolio__caption">
+          <div class="dvl-portfolio__caption-left">
+            <span class="dvl-portfolio__caption-name">Modern Footwear Brand</span>
+            <span class="dvl-portfolio__caption-niche">Footwear &middot; D2C</span>
+          </div>
+          <span class="dvl-portfolio__caption-pill">Full Build</span>
+        </div>
+      </div>
+
+    </div><!-- end track right -->
+
+  </div><!-- end rows -->
+
+</section>
+
+
+  <section class="process-section">
+    <div class="container">
+      <div class="section-eyebrow fade-up">How We Work</div>
+      <h2 class="section-title fade-up">A process that keeps you <em>informed,</em> never in the dark</h2>
+      <p class="section-sub fade-up">We&rsquo;ve structured our workflow so you always know where things stand.</p>
+      <div class="process-steps fade-up">
+        <div class="process-step"><div class="step-circle">01</div><div class="step-title">Discovery Call</div><p class="step-desc">30 minutes to understand your business, your goals, and what&rsquo;s not working.</p></div>
+        <div class="process-step"><div class="step-circle">02</div><div class="step-title">Clear Proposal</div><p class="step-desc">Detailed scope, fixed price, honest timeline. No estimates that grow later.</p></div>
+        <div class="process-step"><div class="step-circle">03</div><div class="step-title">Build &amp; Review</div><p class="step-desc">We build in sprints, you review progress. No going dark for three weeks.</p></div>
+        <div class="process-step"><div class="step-circle">04</div><div class="step-title">Launch &amp; Support</div><p class="step-desc">We go live when it&rsquo;s fully tested. Post-launch support is always included.</p></div>
+      </div>
+    </div>
+  </section>
+
+<!-- ----------Services section------- -->
+<section class="new_shopify_section services-section">
+  <div class="header container">
+      <div class="section-eyebrow fade-up">Everything you need to sell, scale, and succeed</div>
+      <h2 class="section-title fade-up">Our Suite of <em>Services</em> are Sweet 🍒</h2>
+  </div>
+
+  <div class="flex container">
+    
+    <!-- LEFT CONTENT -->
+    <div class="content">
+      <h2 class="section-title fade-up">Build a <em>New</em> Shopify Store</h2>
+      <p class="fade-up">
+        Custom Shopify stores tailored for performance, designed to scale,
+        and optimized for conversions using modern AI-driven workflows.
+      </p>
+
+      <ul class="features fade-up">
+        <li>Shopify Theme Design</li>
+        <li>Conversion Rate Optimization</li>
+        <li>UX & UI Audit</li>
+      </ul>
+
+      <a href="contact.html" class="btn fade-up">Get Your Free Audit Now →</a>
+    </div>
+
+    <!-- RIGHT VIDEO -->
+    <div class="media fade-up">
+      <video autoplay muted loop playsinline>
+        <source src="assets/new_store.mp4" type="video/mp4">
+      </video>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ----------Migration section------- -->
+<section class="migration-section services-padding">
+  <div class="container">
+
+    <!-- LEFT -->
+    <div class="left">
+      <h2 class="cta-title">Seamless <em>Migration</em> to Shopify</h2>
+      <p class="cta-sub">Move your business from any platform to Shopify effortlessly.
+        Experience smooth, fast, and scalable migration.</p>
+      <ul>
+        <li>Risk-Free Trial Migration</li>
+        <li>Zero Downtime Guarantee</li>
+        <li>Tailored for Every Business</li>
+      </ul>
+
+      <a href="#" class="btn">Start your Shopify Test Drive →</a>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+      <h3>Select Your Platform</h3>
+
+      <div class="options">
+        
+        <label class="option">
+          <input type="radio" name="platform">
+          <span>Shopify</span>
+          <img class="shopify" src="assets/shopify.png">
+        </label>
+
+        <label class="option">
+          <input type="radio" name="platform">
+          <span>WooCommerce</span>
+          <img src="assets/woocommerce2.avif">
+        </label>
+
+        <label class="option">
+          <input type="radio" name="platform">
+          <span>Magento</span>
+          <img src="assets/magento2.png">
+        </label>
+
+        <label class="option">
+          <input type="radio" name="platform">
+          <span>BigCommerce</span>
+          <img src="assets/bigcommerce2.webp">
+        </label>
+
+        <label class="option">
+          <input type="radio" name="platform">
+          <span>WordPress</span>
+          <img src="assets/wordpress2.webp">
+        </label>
+
+        <label class="option">
+          <input type="radio" name="platform">
+          <span>Square</span>
+          <img src="assets/sqaure.png">
+        </label>
+
+        <label class="option">
+          <input type="radio" name="platform">
+          <span>Amazon</span>
+          <img src="assets/amazon2.png">
+        </label>
+
+        <label class="option">
+          <input type="radio" name="platform">
+          <span>Custom</span>
+          <img src="assets/custom2.png">
+        </label>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ------------Cart drawer section----------- -->
+<section class="new_shopify_section services-section services-padding">
+
+  <div class="flex container">
+    
+    <!-- LEFT CONTENT -->
+    <div class="content">
+      <h2 class="section-title fade-up">🎮 Gamify Your <em>Cart Drawer & Checkout</em></h2>
+      <p class="fade-up">
+        The cart drawer decides who buys and who bounces. Optimize it, and you’ll turn abandoned carts into completed checkouts.
+      </p>
+
+      <ul class="features fade-up">
+        <li>Multiply Your Conversions</li>
+        <li>Next-Level Upsells & Cross-Sells</li>
+        <li>Reduce Checkout Drop-Offs</li>
+      </ul>
+
+      <a href="contact.html" class="btn fade-up">  Gamify your Cart for $49 →</a>
+    </div>
+
+    <!-- RIGHT VIDEO -->
+    <div class="media fade-up">
+      <video autoplay muted loop playsinline>
+        <source src="assets/cart_drawer.mp4" type="video/mp4">
+      </video>
+    </div>
+
+  </div>
+</section>
+
+<!-- ------------Customization section----------- -->
+<section class="customization_section new_shopify_section services-section services-padding">
+
+  <div class="flex container">
+    
+    <!-- LEFT CONTENT -->
+    <div class="content">
+      <h2 class="section-title fade-up"><em>Personalized</em> eCommerce Development Service</h2>
+      <p class="fade-up">
+        Create seamless, personalized shopping experiences with CherriCode’s end-to-end Shopify Product Customizers that drive engagement, sales, and operational efficiency.
+      </p>
+
+      <ul class="features fade-up">
+        <li>Increase Sales & Engagement</li>
+        <li>Streamline Operations</li>
+        <li>Enhance Brand Value</li>
+      </ul>
+
+      <a href="contact.html" class="btn fade-up">Book a free consultation →</a>
+    </div>
+
+    <!-- RIGHT VIDEO -->
+    <div class="media fade-up">
+      <img src="assets/ai-personalised.webp" style="width: 100%;
+        border-radius: 20px;
+        object-fit: cover;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        padding:10px;">
+    </div>
+
+  </div>
+</section>
+
+<!-- ------------B2B D2C section----------- -->
+<section class="B2B_D2C_section new_shopify_section services-section services-padding">
+  <div class="flex container">
+    <!-- LEFT CONTENT -->
+    <div class="content">
+      <h2 class="section-title fade-up"><em>B2B-D2C</em> Success with Shopify</h2>
+      <p class="fade-up">
+        CherriCode helps merchants leverage Shopify Plus to unify B2B and D2C channels with custom catalogs, volume pricing, automation, and scalable growth.</p>
+      <ul class="features fade-up">
+        <li>Platform Harmony</li>
+        <li>Buyer Intelligence</li>
+        <li>Accelerated Growth</li>
+      </ul>
+      <a href="contact.html" class="btn fade-up">Book a free consultation →</a>
+    </div>
+    <!-- RIGHT VIDEO -->
+    <div class="media fade-up">
+      <img src="assets/b2b-d2c.webp" style="width: 100%;
+        border-radius: 20px;
+        object-fit: cover;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        padding:10px;">
+    </div>
+  </div>
+</section>
+
+<!-- ----------Pricing section--------- -->
+<section class="dvl-pricing container">
+
+  <!-- HEADER -->
+  <div class="dvl-pricing__head">
+    <div class="dvl-pricing__badge fade-up">
+      <div class="dvl-pricing__badge-dot">&#9654;</div>
+      <span class="dvl-pricing__badge-text">Simple &amp; transparent</span>
+    </div>
+    <h2 class="dvl-pricing__title hero-headline fade-up">
+      Simple, <span class="dvl-pricing__title-acc u-word">Transparent</span> Pricing
+    </h2>
+    <p class="dvl-pricing__sub fade-up">Every project is unique, but we keep things clear and flexible. No hidden fees — ever.</p>
+  </div>
+
+  <!-- CARDS -->
+  <div class="dvl-pricing__grid">
+
+    <!-- CARD 1 — Starter -->
+    <div class="dvl-pricing__card fade-up">
+      <p class="dvl-pricing__plan-name">Starter Store</p>
+      <p class="dvl-pricing__plan-desc">Perfect for new brands that need a clean, professional Shopify store fast.</p>
+      <div class="dvl-pricing__price">Starting from $160</div>
+      <p class="dvl-pricing__price-note">One-time project fee &middot; no monthly retainer</p>
+      <div class="dvl-pricing__divider"></div>
+      <ul class="dvl-pricing__features">
+        <li class="dvl-pricing__feature">
+          <span class="dvl-pricing__check"></span>
+          Theme Setup &amp; Customization
+        </li>
+        <li class="dvl-pricing__feature">
+          <span class="dvl-pricing__check"></span>
+          Mobile Optimization
+        </li>
+        <li class="dvl-pricing__feature">
+          <span class="dvl-pricing__check"></span>
+          Basic Apps Integration
+        </li>
+        <li class="dvl-pricing__feature">
+          <span class="dvl-pricing__check"></span>
+          Homepage &amp; Product Pages
+        </li>
+        <li class="dvl-pricing__feature">
+          <span class="dvl-pricing__check"></span>
+          15-Day Post-Launch Support
+        </li>
+      </ul>
+      <a href="/pages/contact" class="dvl-pricing__btn">Get started &rarr;</a>
+    </div>
+
+    <!-- CARD 2 — Popular -->
+    <div class="dvl-pricing__card dvl-pricing__card--popular fade-up">
+      <div class="dvl-pricing__popular-pill">Most Popular</div>
+      <p class="dvl-pricing__plan-name">Growth Store</p>
+      <p class="dvl-pricing__plan-desc">For growing brands that need a fully custom, high-converting Shopify experience.</p>
+      <div class="dvl-pricing__price">$250 &ndash; $500</div>
+      <p class="dvl-pricing__price-note">Scoped per project &middot; fixed-price quote provided upfront</p>
+      <div class="dvl-pricing__divider"></div>
+      <ul class="dvl-pricing__features">
+        <li class="dvl-pricing__feature">
+          <span class="dvl-pricing__check"></span>
+          Custom UI/UX Design
+        </li>
+        <li class="dvl-pricing__feature">
+          <span class="dvl-pricing__check"></span>
+          Conversion Rate Optimization
+        </li>
+        <li class="dvl-pricing__feature">
+          <span class="dvl-pricing__check"></span>
+          Advanced App Integrations
+        </li>
+        <li class="dvl-pricing__feature">
+          <span class="dvl-pricing__check"></span>
+          Speed &amp; Performance Tuning
+        </li>
+        <li class="dvl-pricing__feature">
+          <span class="dvl-pricing__check"></span>
+          Klaviyo / ReCharge Setup
+        </li>
+        <li class="dvl-pricing__feature">
+          <span class="dvl-pricing__check"></span>
+          30-Day Post-Launch Support
+        </li>
+      </ul>
+      <a href="/pages/contact" class="dvl-pricing__btn dvl-pricing__btn--filled">Start your project &rarr;</a>
+    </div>
+
+    <!-- CARD 3 — Custom -->
+    <div class="dvl-pricing__card fade-up">
+      <p class="dvl-pricing__plan-name">Custom Build</p>
+      <p class="dvl-pricing__plan-desc">For established brands that need a fully bespoke Shopify Plus or headless solution.</p>
+      <div class="dvl-pricing__price">Custom Pricing</div>
+      <p class="dvl-pricing__price-note">Quoted after free discovery call &middot; no obligation</p>
+      <div class="dvl-pricing__divider"></div>
+      <ul class="dvl-pricing__features">
+        <li class="dvl-pricing__feature">
+          <span class="dvl-pricing__check"></span>
+          Fully Custom Development
+        </li>
+        <li class="dvl-pricing__feature">
+          <span class="dvl-pricing__check"></span>
+          Scalable Shopify Plus Architecture
+        </li>
+        <li class="dvl-pricing__feature">
+          <span class="dvl-pricing__check"></span>
+          API &amp; App Integrations
+        </li>
+        <li class="dvl-pricing__feature">
+          <span class="dvl-pricing__check"></span>
+          B2B / Wholesale Portal
+        </li>
+        <li class="dvl-pricing__feature">
+          <span class="dvl-pricing__check"></span>
+          Dedicated Project Manager
+        </li>
+        <li class="dvl-pricing__feature">
+          <span class="dvl-pricing__check"></span>
+          60-Day Priority Support
+        </li>
+      </ul>
+      <a href="/pages/contact" class="dvl-pricing__btn">Book a free call &rarr;</a>
+    </div>
+
+  </div><!-- end grid -->
+
+  <!-- BOTTOM CTA -->
+  <div class="dvl-pricing__bottom">
+    <p class="dvl-pricing__bottom-note">Not sure which plan fits you?</p>
+    <a href="/pages/contact" class="dvl-pricing__bottom-cta">Get a Custom Quote &rarr;</a>
+  </div>
+
+  <!-- TRUST ROW -->
+  <div class="dvl-pricing__trust">
+    <div class="dvl-pricing__trust-item">
+      <span class="dvl-pricing__trust-check"></span>
+      Fixed-price quotes — no surprises
+    </div>
+    <div class="dvl-pricing__trust-item">
+      <span class="dvl-pricing__trust-check"></span>
+      Free 30-min discovery call
+    </div>
+    <div class="dvl-pricing__trust-item">
+      <span class="dvl-pricing__trust-check"></span>
+      Zero downtime launches
+    </div>
+    <div class="dvl-pricing__trust-item">
+      <span class="dvl-pricing__trust-check"></span>
+      Satisfaction guaranteed
+    </div>
+  </div>
+
+</section>
+
+<!-- ------------Testimonial section----------- -->
+<section class="dvl-reviews container">
+
+  <!-- HEADER -->
+  <div class="dvl-reviews__head">
+    <div class="section-eyebrow fade-up">Client Stories</div>
+    <h2 class="section-title fade-up">Straight from the <em>founders</em> we work with</h2>
+  </div>
+
+  <!-- SCROLLING COLUMNS -->
+  <div class="dvl-reviews__cols">
+
+    <!-- COLUMN 1 — scrolls up -->
+    <div class="dvl-reviews__col">
+      <div class="dvl-reviews__track">
+
+        <div class="dvl-reviews__card">
+          <div class="dvl-reviews__author">
+            <div class="dvl-reviews__avatar">AM</div>
+            <div>
+              <div class="dvl-reviews__name">Arjun M.</div>
+              <div class="dvl-reviews__role">Fashion Store Owner, India</div>
+            </div>
+          </div>
+          <div class="dvl-reviews__stars">
+            <span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span>
+          </div>
+          <p class="dvl-reviews__quote">Diviler completely transformed our store. Conversion rate jumped from 1.2% to 3.8% in just six weeks. Absolutely worth every rupee spent.</p>
+          <span class="dvl-reviews__tag">Theme Design</span>
+        </div>
+
+        <div class="dvl-reviews__card">
+          <div class="dvl-reviews__author">
+            <div class="dvl-reviews__avatar dvl-reviews__avatar--b">RT</div>
+            <div>
+              <div class="dvl-reviews__name">Ravi T.</div>
+              <div class="dvl-reviews__role">Electronics Retailer, India</div>
+            </div>
+          </div>
+          <div class="dvl-reviews__stars">
+            <span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span>
+          </div>
+          <p class="dvl-reviews__quote">We moved from WooCommerce — 12,000 products, all orders, all customers. Zero downtime, zero errors. The migration was flawless from start to finish.</p>
+          <span class="dvl-reviews__tag">Migration</span>
+        </div>
+
+        <div class="dvl-reviews__card">
+          <div class="dvl-reviews__author">
+            <div class="dvl-reviews__avatar dvl-reviews__avatar--c">JP</div>
+            <div>
+              <div class="dvl-reviews__name">James P.</div>
+              <div class="dvl-reviews__role">Coffee Brand, Australia</div>
+            </div>
+          </div>
+          <div class="dvl-reviews__stars">
+            <span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span>
+          </div>
+          <p class="dvl-reviews__quote">Our B2B portal now runs entirely on Shopify Plus. Wholesale ordering is fully automated — our account managers save 20+ hours a week. Game changer.</p>
+          <span class="dvl-reviews__tag">Shopify Plus</span>
+        </div>
+
+        <div class="dvl-reviews__card">
+          <div class="dvl-reviews__author">
+            <div class="dvl-reviews__avatar dvl-reviews__avatar--d">PS</div>
+            <div>
+              <div class="dvl-reviews__name">Priya S.</div>
+              <div class="dvl-reviews__role">D2C Beauty Brand, India</div>
+            </div>
+          </div>
+          <div class="dvl-reviews__stars">
+            <span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span>
+          </div>
+          <p class="dvl-reviews__quote">Lighthouse score went from 38 to 91. Pages load in under a second now. Bounce rate dropped by 40% in the very first month after launch.</p>
+          <span class="dvl-reviews__tag">Speed Optimisation</span>
+        </div>
+
+        <!-- duplicate for seamless loop -->
+        <div class="dvl-reviews__card">
+          <div class="dvl-reviews__author">
+            <div class="dvl-reviews__avatar">AM</div>
+            <div>
+              <div class="dvl-reviews__name">Arjun M.</div>
+              <div class="dvl-reviews__role">Fashion Store Owner, India</div>
+            </div>
+          </div>
+          <div class="dvl-reviews__stars">
+            <span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span>
+          </div>
+          <p class="dvl-reviews__quote">Diviler completely transformed our store. Conversion rate jumped from 1.2% to 3.8% in just six weeks. Absolutely worth every rupee spent.</p>
+          <span class="dvl-reviews__tag">Theme Design</span>
+        </div>
+
+        <div class="dvl-reviews__card">
+          <div class="dvl-reviews__author">
+            <div class="dvl-reviews__avatar dvl-reviews__avatar--b">RT</div>
+            <div>
+              <div class="dvl-reviews__name">Ravi T.</div>
+              <div class="dvl-reviews__role">Electronics Retailer, India</div>
+            </div>
+          </div>
+          <div class="dvl-reviews__stars">
+            <span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span>
+          </div>
+          <p class="dvl-reviews__quote">We moved from WooCommerce — 12,000 products, all orders, all customers. Zero downtime, zero errors. The migration was flawless from start to finish.</p>
+          <span class="dvl-reviews__tag">Migration</span>
+        </div>
+
+        <div class="dvl-reviews__card">
+          <div class="dvl-reviews__author">
+            <div class="dvl-reviews__avatar dvl-reviews__avatar--c">JP</div>
+            <div>
+              <div class="dvl-reviews__name">James P.</div>
+              <div class="dvl-reviews__role">Coffee Brand, Australia</div>
+            </div>
+          </div>
+          <div class="dvl-reviews__stars">
+            <span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span>
+          </div>
+          <p class="dvl-reviews__quote">Our B2B portal now runs entirely on Shopify Plus. Wholesale ordering is fully automated — our account managers save 20+ hours a week. Game changer.</p>
+          <span class="dvl-reviews__tag">Shopify Plus</span>
+        </div>
+
+        <div class="dvl-reviews__card">
+          <div class="dvl-reviews__author">
+            <div class="dvl-reviews__avatar dvl-reviews__avatar--d">PS</div>
+            <div>
+              <div class="dvl-reviews__name">Priya S.</div>
+              <div class="dvl-reviews__role">D2C Beauty Brand, India</div>
+            </div>
+          </div>
+          <div class="dvl-reviews__stars">
+            <span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span>
+          </div>
+          <p class="dvl-reviews__quote">Lighthouse score went from 38 to 91. Pages load in under a second now. Bounce rate dropped by 40% in the very first month after launch.</p>
+          <span class="dvl-reviews__tag">Speed Optimisation</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- COLUMN 2 — scrolls down (opposite) -->
+    <div class="dvl-reviews__col">
+      <div class="dvl-reviews__track">
+
+        <div class="dvl-reviews__card">
+          <div class="dvl-reviews__author">
+            <div class="dvl-reviews__avatar dvl-reviews__avatar--e">SK</div>
+            <div>
+              <div class="dvl-reviews__name">Sarah K.</div>
+              <div class="dvl-reviews__role">Wellness Brand, UK</div>
+            </div>
+          </div>
+          <div class="dvl-reviews__stars">
+            <span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span>
+          </div>
+          <p class="dvl-reviews__quote">Professional, fast, and incredibly talented. They built our subscription flow from scratch — UI is better than anything from agencies charging 5× more.</p>
+          <span class="dvl-reviews__tag">Custom Development</span>
+        </div>
+
+        <div class="dvl-reviews__card">
+          <div class="dvl-reviews__author">
+            <div class="dvl-reviews__avatar">TW</div>
+            <div>
+              <div class="dvl-reviews__name">Tom W.</div>
+              <div class="dvl-reviews__role">Startup Founder, USA</div>
+            </div>
+          </div>
+          <div class="dvl-reviews__stars">
+            <span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span>
+          </div>
+          <p class="dvl-reviews__quote">We launched our entire store in 3 weeks. Daily communication, delivered ahead of schedule, and post-launch support was outstanding. Highly recommend.</p>
+          <span class="dvl-reviews__tag">Full Build</span>
+        </div>
+
+        <div class="dvl-reviews__card">
+          <div class="dvl-reviews__author">
+            <div class="dvl-reviews__avatar dvl-reviews__avatar--c">AB</div>
+            <div>
+              <div class="dvl-reviews__name">Alex B.</div>
+              <div class="dvl-reviews__role">Home Goods, Canada</div>
+            </div>
+          </div>
+          <div class="dvl-reviews__stars">
+            <span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span>
+          </div>
+          <p class="dvl-reviews__quote">Klaviyo, ReCharge, and a custom bundle builder — all integrated perfectly. The automated email flows alone generate an extra $12k a month in revenue.</p>
+          <span class="dvl-reviews__tag">App Integration</span>
+        </div>
+
+        <div class="dvl-reviews__card">
+          <div class="dvl-reviews__author">
+            <div class="dvl-reviews__avatar dvl-reviews__avatar--b">NR</div>
+            <div>
+              <div class="dvl-reviews__name">Neha R.</div>
+              <div class="dvl-reviews__role">Apparel Store, India</div>
+            </div>
+          </div>
+          <div class="dvl-reviews__stars">
+            <span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span>
+          </div>
+          <p class="dvl-reviews__quote">From a dated 2018-era theme to a stunning modern store in 4 weeks. The mobile experience is especially beautiful — 70% of revenue now comes from mobile.</p>
+          <span class="dvl-reviews__tag">Redesign</span>
+        </div>
+
+        <!-- duplicate -->
+        <div class="dvl-reviews__card">
+          <div class="dvl-reviews__author">
+            <div class="dvl-reviews__avatar dvl-reviews__avatar--e">SK</div>
+            <div>
+              <div class="dvl-reviews__name">Sarah K.</div>
+              <div class="dvl-reviews__role">Wellness Brand, UK</div>
+            </div>
+          </div>
+          <div class="dvl-reviews__stars">
+            <span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span>
+          </div>
+          <p class="dvl-reviews__quote">Professional, fast, and incredibly talented. They built our subscription flow from scratch — UI is better than anything from agencies charging 5× more.</p>
+          <span class="dvl-reviews__tag">Custom Development</span>
+        </div>
+
+        <div class="dvl-reviews__card">
+          <div class="dvl-reviews__author">
+            <div class="dvl-reviews__avatar">TW</div>
+            <div>
+              <div class="dvl-reviews__name">Tom W.</div>
+              <div class="dvl-reviews__role">Startup Founder, USA</div>
+            </div>
+          </div>
+          <div class="dvl-reviews__stars">
+            <span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span>
+          </div>
+          <p class="dvl-reviews__quote">We launched our entire store in 3 weeks. Daily communication, delivered ahead of schedule, and post-launch support was outstanding. Highly recommend.</p>
+          <span class="dvl-reviews__tag">Full Build</span>
+        </div>
+
+        <div class="dvl-reviews__card">
+          <div class="dvl-reviews__author">
+            <div class="dvl-reviews__avatar dvl-reviews__avatar--c">AB</div>
+            <div>
+              <div class="dvl-reviews__name">Alex B.</div>
+              <div class="dvl-reviews__role">Home Goods, Canada</div>
+            </div>
+          </div>
+          <div class="dvl-reviews__stars">
+            <span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span>
+          </div>
+          <p class="dvl-reviews__quote">Klaviyo, ReCharge, and a custom bundle builder — all integrated perfectly. The automated email flows alone generate an extra $12k a month in revenue.</p>
+          <span class="dvl-reviews__tag">App Integration</span>
+        </div>
+
+        <div class="dvl-reviews__card">
+          <div class="dvl-reviews__author">
+            <div class="dvl-reviews__avatar dvl-reviews__avatar--b">NR</div>
+            <div>
+              <div class="dvl-reviews__name">Neha R.</div>
+              <div class="dvl-reviews__role">Apparel Store, India</div>
+            </div>
+          </div>
+          <div class="dvl-reviews__stars">
+            <span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span>
+          </div>
+          <p class="dvl-reviews__quote">From a dated 2018-era theme to a stunning modern store in 4 weeks. The mobile experience is especially beautiful — 70% of revenue now comes from mobile.</p>
+          <span class="dvl-reviews__tag">Redesign</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- COLUMN 3 — scrolls up slow -->
+    <div class="dvl-reviews__col">
+      <div class="dvl-reviews__track">
+
+        <div class="dvl-reviews__card">
+          <div class="dvl-reviews__author">
+            <div class="dvl-reviews__avatar dvl-reviews__avatar--d">MD</div>
+            <div>
+              <div class="dvl-reviews__name">Meera D.</div>
+              <div class="dvl-reviews__role">Jewelry Brand, India</div>
+            </div>
+          </div>
+          <div class="dvl-reviews__stars">
+            <span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span>
+          </div>
+          <p class="dvl-reviews__quote">The CRO audit identified ₹4 lakh in monthly revenue we were leaving on the table. The checkout changes they made paid back the entire project cost in week two.</p>
+          <span class="dvl-reviews__tag">CRO Audit</span>
+        </div>
+
+        <div class="dvl-reviews__card">
+          <div class="dvl-reviews__author">
+            <div class="dvl-reviews__avatar dvl-reviews__avatar--e">CL</div>
+            <div>
+              <div class="dvl-reviews__name">Chris L.</div>
+              <div class="dvl-reviews__role">Fitness Brand, London</div>
+            </div>
+          </div>
+          <div class="dvl-reviews__stars">
+            <span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span>
+          </div>
+          <p class="dvl-reviews__quote">The animations and micro-interactions are simply beautiful. Multiple customers messaged us saying the website itself made them trust our brand more.</p>
+          <span class="dvl-reviews__tag">Theme Design</span>
+        </div>
+
+        <div class="dvl-reviews__card">
+          <div class="dvl-reviews__author">
+            <div class="dvl-reviews__avatar">SJ</div>
+            <div>
+              <div class="dvl-reviews__name">Simran J.</div>
+              <div class="dvl-reviews__role">Organic Foods Brand</div>
+            </div>
+          </div>
+          <div class="dvl-reviews__stars">
+            <span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span>
+          </div>
+          <p class="dvl-reviews__quote">We started from zero. Diviler built our entire store, set up all our apps, trained our team, and stayed available for 30 days post-launch. Couldn't ask for more.</p>
+          <span class="dvl-reviews__tag">Full Build</span>
+        </div>
+
+        <div class="dvl-reviews__card">
+          <div class="dvl-reviews__author">
+            <div class="dvl-reviews__avatar dvl-reviews__avatar--b">DV</div>
+            <div>
+              <div class="dvl-reviews__name">Deepa V.</div>
+              <div class="dvl-reviews__role">Skincare Brand, India</div>
+            </div>
+          </div>
+          <div class="dvl-reviews__stars">
+            <span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span>
+          </div>
+          <p class="dvl-reviews__quote">They found product images causing 3-second delays. After optimisation, our add-to-cart rate increased by 28%. Small change, absolutely massive impact on revenue.</p>
+          <span class="dvl-reviews__tag">Speed & CRO</span>
+        </div>
+
+        <!-- duplicate -->
+        <div class="dvl-reviews__card">
+          <div class="dvl-reviews__author">
+            <div class="dvl-reviews__avatar dvl-reviews__avatar--d">MD</div>
+            <div>
+              <div class="dvl-reviews__name">Meera D.</div>
+              <div class="dvl-reviews__role">Jewelry Brand, India</div>
+            </div>
+          </div>
+          <div class="dvl-reviews__stars">
+            <span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span>
+          </div>
+          <p class="dvl-reviews__quote">The CRO audit identified ₹4 lakh in monthly revenue we were leaving on the table. The checkout changes they made paid back the entire project cost in week two.</p>
+          <span class="dvl-reviews__tag">CRO Audit</span>
+        </div>
+
+        <div class="dvl-reviews__card">
+          <div class="dvl-reviews__author">
+            <div class="dvl-reviews__avatar dvl-reviews__avatar--e">CL</div>
+            <div>
+              <div class="dvl-reviews__name">Chris L.</div>
+              <div class="dvl-reviews__role">Fitness Brand, London</div>
+            </div>
+          </div>
+          <div class="dvl-reviews__stars">
+            <span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span>
+          </div>
+          <p class="dvl-reviews__quote">The animations and micro-interactions are simply beautiful. Multiple customers messaged us saying the website itself made them trust our brand more.</p>
+          <span class="dvl-reviews__tag">Theme Design</span>
+        </div>
+
+        <div class="dvl-reviews__card">
+          <div class="dvl-reviews__author">
+            <div class="dvl-reviews__avatar">SJ</div>
+            <div>
+              <div class="dvl-reviews__name">Simran J.</div>
+              <div class="dvl-reviews__role">Organic Foods Brand</div>
+            </div>
+          </div>
+          <div class="dvl-reviews__stars">
+            <span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span>
+          </div>
+          <p class="dvl-reviews__quote">We started from zero. Diviler built our entire store, set up all our apps, trained our team, and stayed available for 30 days post-launch. Couldn't ask for more.</p>
+          <span class="dvl-reviews__tag">Full Build</span>
+        </div>
+
+        <div class="dvl-reviews__card">
+          <div class="dvl-reviews__author">
+            <div class="dvl-reviews__avatar dvl-reviews__avatar--b">DV</div>
+            <div>
+              <div class="dvl-reviews__name">Deepa V.</div>
+              <div class="dvl-reviews__role">Skincare Brand, India</div>
+            </div>
+          </div>
+          <div class="dvl-reviews__stars">
+            <span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span><span class="dvl-reviews__star"></span>
+          </div>
+          <p class="dvl-reviews__quote">They found product images causing 3-second delays. After optimisation, our add-to-cart rate increased by 28%. Small change, absolutely massive impact on revenue.</p>
+          <span class="dvl-reviews__tag">Speed & CRO</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- end cols -->
+</section>
+
+<!-----Global map section svg----->
+<section class="results-section">
+  <div class="results-section-container container">
+    <div class="section-eyebrow fade-up">Ready to Work Globally</div>
+    <h2 class="section-title fade-up">Open to collaborating with <em>brands</em> across the <em>world</em> to build powerful <em>Shopify experiences</em>.</h2>
+  <figure class="world-map dogras-world-map container fade-up">
+    <img src="https://res.cloudinary.com/mrdogra007/image/upload/v1702641465/sample-images/vgoe8mdyqfh8tlcnbrkp.png" style="margin: auto;" alt="Dogras Weblog Reach">
+    
+    <div class="map-location pin-india pin-india-chandigarh">
+      <div class="dogras-location-bubble active head_quater">
+      <div class="dogras-location-name">India</div>
+      <div class="dogras-location-desc">Head Office</div>
+      </div>
+      <svg class="svg-icon" viewBox="0 0 20 20">
+        <path d="M10,1.375c-3.17,0-5.75,2.548-5.75,5.682c0,6.685,5.259,11.276,5.483,11.469c0.152,0.132,0.382,0.132,0.534,0c0.224-0.193,5.481-4.784,5.483-11.469C15.75,3.923,13.171,1.375,10,1.375 M10,17.653c-1.064-1.024-4.929-5.127-4.929-10.596c0-2.68,2.212-4.861,4.929-4.861s4.929,2.181,4.929,4.861C14.927,12.518,11.063,16.627,10,17.653 M10,3.839c-1.815,0-3.286,1.47-3.286,3.286s1.47,3.286,3.286,3.286s3.286-1.47,3.286-3.286S11.815,3.839,10,3.839 M10,9.589c-1.359,0-2.464-1.105-2.464-2.464S8.641,4.661,10,4.661s2.464,1.105,2.464,2.464S11.359,9.589,10,9.589"></path>
+      </svg>
+    </div>
+    
+    <div class="map-location pin-usa">
+      <div class="dogras-location-bubble active">
+      <div class="dogras-location-name">United States</div>
+      <div class="dogras-location-desc">Ready to Collaborate</div>
+      </div>
+      <svg class="svg-icon" viewBox="0 0 20 20">
+        <path d="M10,1.375c-3.17,0-5.75,2.548-5.75,5.682c0,6.685,5.259,11.276,5.483,11.469c0.152,0.132,0.382,0.132,0.534,0c0.224-0.193,5.481-4.784,5.483-11.469C15.75,3.923,13.171,1.375,10,1.375 M10,17.653c-1.064-1.024-4.929-5.127-4.929-10.596c0-2.68,2.212-4.861,4.929-4.861s4.929,2.181,4.929,4.861C14.927,12.518,11.063,16.627,10,17.653 M10,3.839c-1.815,0-3.286,1.47-3.286,3.286s1.47,3.286,3.286,3.286s3.286-1.47,3.286-3.286S11.815,3.839,10,3.839 M10,9.589c-1.359,0-2.464-1.105-2.464-2.464S8.641,4.661,10,4.661s2.464,1.105,2.464,2.464S11.359,9.589,10,9.589"></path>
+      </svg>
+    </div>
+    
+    <div class="map-location pin-australia">
+      <div class="dogras-location-bubble active">
+      <div class="dogras-location-name">Australia</div>
+      <div class="dogras-location-desc">Ready to Collaborate</div>
+      </div>
+      <svg class="svg-icon" viewBox="0 0 20 20">
+        <path d="M10,1.375c-3.17,0-5.75,2.548-5.75,5.682c0,6.685,5.259,11.276,5.483,11.469c0.152,0.132,0.382,0.132,0.534,0c0.224-0.193,5.481-4.784,5.483-11.469C15.75,3.923,13.171,1.375,10,1.375 M10,17.653c-1.064-1.024-4.929-5.127-4.929-10.596c0-2.68,2.212-4.861,4.929-4.861s4.929,2.181,4.929,4.861C14.927,12.518,11.063,16.627,10,17.653 M10,3.839c-1.815,0-3.286,1.47-3.286,3.286s1.47,3.286,3.286,3.286s3.286-1.47,3.286-3.286S11.815,3.839,10,3.839 M10,9.589c-1.359,0-2.464-1.105-2.464-2.464S8.641,4.661,10,4.661s2.464,1.105,2.464,2.464S11.359,9.589,10,9.589"></path>
+      </svg>
+    </div>
+    
+    <div class="map-location pin-japan">
+      <div class="dogras-location-bubble active">
+      <div class="dogras-location-name">Japan</div>
+      <div class="dogras-location-desc">Ready to Collaborate</div>
+      </div>
+      <svg class="svg-icon" viewBox="0 0 20 20">
+        <path d="M10,1.375c-3.17,0-5.75,2.548-5.75,5.682c0,6.685,5.259,11.276,5.483,11.469c0.152,0.132,0.382,0.132,0.534,0c0.224-0.193,5.481-4.784,5.483-11.469C15.75,3.923,13.171,1.375,10,1.375 M10,17.653c-1.064-1.024-4.929-5.127-4.929-10.596c0-2.68,2.212-4.861,4.929-4.861s4.929,2.181,4.929,4.861C14.927,12.518,11.063,16.627,10,17.653 M10,3.839c-1.815,0-3.286,1.47-3.286,3.286s1.47,3.286,3.286,3.286s3.286-1.47,3.286-3.286S11.815,3.839,10,3.839 M10,9.589c-1.359,0-2.464-1.105-2.464-2.464S8.641,4.661,10,4.661s2.464,1.105,2.464,2.464S11.359,9.589,10,9.589"></path>
+      </svg>
+    </div>
+    
+    <div class="map-location pin-brazil">
+      <div class="dogras-location-bubble active">
+      <div class="dogras-location-name">Brazil</div>
+      <div class="dogras-location-desc">Ready to Collaborate</div>
+      </div>
+      <svg class="svg-icon" viewBox="0 0 20 20">
+        <path d="M10,1.375c-3.17,0-5.75,2.548-5.75,5.682c0,6.685,5.259,11.276,5.483,11.469c0.152,0.132,0.382,0.132,0.534,0c0.224-0.193,5.481-4.784,5.483-11.469C15.75,3.923,13.171,1.375,10,1.375 M10,17.653c-1.064-1.024-4.929-5.127-4.929-10.596c0-2.68,2.212-4.861,4.929-4.861s4.929,2.181,4.929,4.861C14.927,12.518,11.063,16.627,10,17.653 M10,3.839c-1.815,0-3.286,1.47-3.286,3.286s1.47,3.286,3.286,3.286s3.286-1.47,3.286-3.286S11.815,3.839,10,3.839 M10,9.589c-1.359,0-2.464-1.105-2.464-2.464S8.641,4.661,10,4.661s2.464,1.105,2.464,2.464S11.359,9.589,10,9.589"></path>
+      </svg>
+    </div>
+    
+    <div class="map-location pin-germany">
+      <div class="dogras-location-bubble active">
+      <div class="dogras-location-name">Germany</div>
+      <div class="dogras-location-desc">Ready to Collaborate</div>
+      </div>
+      <svg class="svg-icon" viewBox="0 0 20 20">
+        <path d="M10,1.375c-3.17,0-5.75,2.548-5.75,5.682c0,6.685,5.259,11.276,5.483,11.469c0.152,0.132,0.382,0.132,0.534,0c0.224-0.193,5.481-4.784,5.483-11.469C15.75,3.923,13.171,1.375,10,1.375 M10,17.653c-1.064-1.024-4.929-5.127-4.929-10.596c0-2.68,2.212-4.861,4.929-4.861s4.929,2.181,4.929,4.861C14.927,12.518,11.063,16.627,10,17.653 M10,3.839c-1.815,0-3.286,1.47-3.286,3.286s1.47,3.286,3.286,3.286s3.286-1.47,3.286-3.286S11.815,3.839,10,3.839 M10,9.589c-1.359,0-2.464-1.105-2.464-2.464S8.641,4.661,10,4.661s2.464,1.105,2.464,2.464S11.359,9.589,10,9.589"></path>
+      </svg>
+    </div>
+    
+    <div class="map-location pin-russia">
+      <div class="dogras-location-bubble active">
+      <div class="dogras-location-name">Russia</div>
+      <div class="dogras-location-desc">Ready to Collaborate</div>
+      </div>
+      <svg class="svg-icon" viewBox="0 0 20 20">
+        <path d="M10,1.375c-3.17,0-5.75,2.548-5.75,5.682c0,6.685,5.259,11.276,5.483,11.469c0.152,0.132,0.382,0.132,0.534,0c0.224-0.193,5.481-4.784,5.483-11.469C15.75,3.923,13.171,1.375,10,1.375 M10,17.653c-1.064-1.024-4.929-5.127-4.929-10.596c0-2.68,2.212-4.861,4.929-4.861s4.929,2.181,4.929,4.861C14.927,12.518,11.063,16.627,10,17.653 M10,3.839c-1.815,0-3.286,1.47-3.286,3.286s1.47,3.286,3.286,3.286s3.286-1.47,3.286-3.286S11.815,3.839,10,3.839 M10,9.589c-1.359,0-2.464-1.105-2.464-2.464S8.641,4.661,10,4.661s2.464,1.105,2.464,2.464S11.359,9.589,10,9.589"></path>
+      </svg>
+    </div>
+    
+    <div class="map-location pin-canada">
+      <div class="dogras-location-bubble active">
+      <div class="dogras-location-name">Canada</div>
+      <div class="dogras-location-desc">Ready to Collaborate</div>
+      </div>
+      <svg class="svg-icon" viewBox="0 0 20 20">
+        <path d="M10,1.375c-3.17,0-5.75,2.548-5.75,5.682c0,6.685,5.259,11.276,5.483,11.469c0.152,0.132,0.382,0.132,0.534,0c0.224-0.193,5.481-4.784,5.483-11.469C15.75,3.923,13.171,1.375,10,1.375 M10,17.653c-1.064-1.024-4.929-5.127-4.929-10.596c0-2.68,2.212-4.861,4.929-4.861s4.929,2.181,4.929,4.861C14.927,12.518,11.063,16.627,10,17.653 M10,3.839c-1.815,0-3.286,1.47-3.286,3.286s1.47,3.286,3.286,3.286s3.286-1.47,3.286-3.286S11.815,3.839,10,3.839 M10,9.589c-1.359,0-2.464-1.105-2.464-2.464S8.641,4.661,10,4.661s2.464,1.105,2.464,2.464S11.359,9.589,10,9.589"></path>
+      </svg>
+    </div>
+  
+  </figure>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container"><div class="cta-inner fade-up">
+    <h2 class="cta-title">Ready to build a store that <em>actually converts?</em></h2>
+    <p class="cta-sub">Book a free 30-minute call. No pitch deck. Just an honest conversation about your store.</p>
+    <!-- <div class="cta-buttons">
+      <a href="contact.html" class="btn-primary">Book a Free Call <span class="arr">&rarr;</span></a>
+      <a href="service.html" class="btn-ghost">View All Services</a>
+    </div> -->
+  </div></div>
+
+  <!-- Calendly inline widget begin -->
+  <div class="calendly-inline-widget" data-url="https://calendly.com/hellocherricode/30min?primary_color=ff2d55" style="min-width:320px;height:700px;"></div>
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <!-- Calendly inline widget end -->
+
+</section>
+
+
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <img src="data:image/png;base64,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" style="width:32px;height:32px;border-radius:50%;object-fit:cover;">
+            <span class="logo-wordmark" style="color:white;font-size:17px;">Cherri<span>Code</span></span>
+          </div>
+          <p class="footer-desc">Shopify development agency helping startups and small businesses build stores that sell. Remote-first, globally available.</p>
+          <div class="footer-social">
+            <a class="social-btn" target="_blank" href="https://in.linkedin.com/company/cherricode">in</a>
+            <a class="social-btn" target="_blank">&#120143;</a>
+            <a class="social-btn" target="_blank" href="https://www.instagram.com/cherricode">ig</a>
+          </div>
+        </div>
+        <div><div class="footer-col-title">Services</div><ul class="footer-links"><li><a href="service.html">New Store Build</a></li><li><a href="service.html">Redesign &amp; CRO</a></li><li><a href="service.html">Platform Migration</a></li><li><a href="service.html">Maintenance</a></li><li><a href="service.html">Custom Dev</a></li></ul></div>
+        <div><div class="footer-col-title">Company</div><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="contact.html">Book a Call</a></li></ul></div>
+        <div><div class="footer-col-title">Contact</div><ul class="footer-links"><li><a href="mailto:hello@cherricode.com">hello@cherricode.com</a></li><li><a>@cherricode</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">&copy; 2025 CherriCode. All rights reserved.</div>
+        <div class="footer-built">Built on <span>Shopify</span> &middot; Results-focused</div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
