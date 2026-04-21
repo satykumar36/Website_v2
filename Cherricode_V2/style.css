@@ -2249,4 +2249,16 @@ body { font-family: 'Open Sans', sans-serif;}
     transform: translateY(0);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(255, 45, 85, 0.12);
   }
+  .why_cherricode{
+    padding-bottom: 50px !important;
+  }
+  .dvl-portfolio {
+      padding-top: 5rem !important;
+  }
+  .new_shopify_section,.results-section {
+      padding-top: 70px;
+  }
+  .B2B_D2C_section {
+    padding-bottom: 70px;
+  }
 }
