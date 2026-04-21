@@ -2207,9 +2207,8 @@ body { font-family: 'Open Sans', sans-serif;}
 }
 
 
-/* ----------------- */
+/* -------HAMBURGER Css---------- */
 
-/* HAMBURGER */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -2232,7 +2231,7 @@ body { font-family: 'Open Sans', sans-serif;}
 
   .nav-links {
     position: absolute;
-    top: 70px;
+    top: 73px;
     right: 0;
     background: #fff;
     width: 100%;
@@ -2248,5 +2247,6 @@ body { font-family: 'Open Sans', sans-serif;}
 
   .nav-links.active {
     transform: translateY(0);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(255, 45, 85, 0.12);
   }
 }
