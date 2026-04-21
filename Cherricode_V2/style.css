@@ -100,6 +100,11 @@ nav.scrolled{box-shadow:var(--shadow-sm);}
 .stat-num{font-family:var(--serif);font-size:38px;font-weight:700;color:var(--ink);line-height:1;margin-bottom:4px;}
 .stat-num span{color:var(--cherry);}
 .stat-label{font-family:var(--mono);font-size:10px;color:var(--ink-40);letter-spacing:.1em;text-transform:uppercase;}
+@media screen and (max-width:600px) {
+.badge-live {
+    top: 8px !important;
+}
+}
 
 /* HERO CARD */
 .hero-right{animation:fadeIn 1s ease .4s both;position:relative;}
