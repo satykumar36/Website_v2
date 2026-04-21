@@ -2200,3 +2200,8 @@ body { font-family: 'Open Sans', sans-serif;}
 .service_page{
   padding-top: 80px;
 }
+@media screen and (max-width:600px) {
+  .calendly-inline-widget{
+    height: 830px !important;
+  }
+}
