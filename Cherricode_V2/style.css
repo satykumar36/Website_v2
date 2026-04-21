@@ -342,7 +342,7 @@ select{appearance:none;}
   .hero-inner,.page-hero-inner{grid-template-columns:1fr;gap:36px;}
   .hero-right{margin-top:60px;}
   .services-grid{grid-template-columns:1fr;}
-  .process-steps{grid-template-columns:1fr 1fr;}
+  .process-steps{grid-template-columns:1fr 1fr; row-gap: 35px;}
   .process-steps::before{display:none;}
   .why-grid,.about-story,.contact-grid{grid-template-columns:1fr;}
   .testimonials-grid,.values-grid{grid-template-columns:1fr;}
